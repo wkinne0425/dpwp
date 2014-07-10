@@ -9,12 +9,12 @@ noun_2 = raw_input("Please Enter Another Noun")
 '''
 fill_items = []
 
-def addItems(a,aa,n,nn):
+def addItems(a):
 
-    fill_items.insert(a)
+    fill_items.insert(0, a)
     return fill_items
 
-test = fill_items(adj_1)
+test = addItems(adj_1)
 
 print test
 
