@@ -1,28 +1,33 @@
 __author__ = 'wkinne'
 
+#Import the random module. This allows me to get a random number
 import random
 
+#Retreiving the variables from the user for the adjectives
 adj_1 = raw_input("Please Enter An Adjective: ")
-
 adj_2 = raw_input("Please Enter Another Adjective: ")
 
+#This validates that the 2 variables are not the same
 while adj_1 == adj_2:
     print "Adjectives cannot be identical"
     adj_1 = raw_input("Please Enter An Adjective: ")
     adj_2 = raw_input("Please Enter Another Adjective: ")
 
 
-
+#Retreiving the variables from the user for the Nouns
 noun_1 = raw_input("Please Enter A Noun: ")
 noun_2 = raw_input("Please Enter Another Noun: ")
 
+#Validates that the 2 Noun variables are not the same
 while noun_1 == noun_2:
     print "Nouns cannot be identical"
     noun_1 = raw_input("Please Enter A Noun: ")
     noun_2 = raw_input("Please Enter Another Noun: ")
 
+#Empty array to be filled my the addItems function
 fill_items = []
 
+#This function pushes items to the fill_items array
 def addItems(a,aa,n,nn):
 
     fill_items.insert(0, a)
@@ -36,8 +41,8 @@ def addItems(a,aa,n,nn):
 
 
 
-
-test = addItems(adj_1, adj_2, noun_1, noun_2)
+#This adds all items to array and also creates a variable of that array
+add_variables = addItems(adj_1, adj_2, noun_1, noun_2)
 
 if len(fill_items)<4:
     print "There are not enough items in this array"
