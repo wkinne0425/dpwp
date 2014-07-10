@@ -1,5 +1,7 @@
 __author__ = 'wkinne'
 
+import random
+
 adj_1 = raw_input("Please Enter An Adjective: ")
 
 adj_2 = raw_input("Please Enter Another Adjective: ")
@@ -40,7 +42,14 @@ test = addItems(adj_1, adj_2, noun_1, noun_2)
 if len(fill_items)<4:
     print "There are not enough items in this array"
 else:
-    print "The " + fill_items[2] + " was very " + fill_items[0]
+    a1 = random.randint(0,1)
+    n1 = random.randint(2,3)
+
+    print "The " + fill_items[n1] + " was very " + fill_items[a1]
+
+
+
+
 
 
 
