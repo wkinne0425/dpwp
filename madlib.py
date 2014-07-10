@@ -15,9 +15,9 @@ noun_1 = raw_input("Please Enter A Noun: ")
 noun_2 = raw_input("Please Enter Another Noun: ")
 
 while noun_1 == noun_2:
-    print "Adjectives cannot be identical"
-    adj_1 = raw_input("Please Enter An Adjective: ")
-    adj_2 = raw_input("Please Enter Another Adjective: ")
+    print "Nouns cannot be identical"
+    noun_1 = raw_input("Please Enter A Noun: ")
+    noun_2 = raw_input("Please Enter Another Noun: ")
 
 fill_items = []
 
