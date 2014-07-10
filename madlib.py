@@ -6,4 +6,13 @@ adj_2 = raw_input("Please Enter Another Adjective")
 noun_1 = raw_input("Please Enter A Noun")
 noun_2 = raw_input("Please Enter Another Noun")
 
+fill_items = []
+
+def addItems(a,aa,n,nn):
+
+    fill_items.insert(a)
+
+
+
+
 
