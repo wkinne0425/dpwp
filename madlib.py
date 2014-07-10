@@ -30,9 +30,23 @@ def addItems(a,aa,n,nn):
 
     return fill_items
 
+
+
+
+
+
 test = addItems(adj_1, adj_2, noun_1, noun_2)
 
-print test
+if len(fill_items)<4:
+    print "There are not enough items in this array"
+else:
+    print "The " + fill_items[2] + " was very " + fill_items[0]
+
+
+
+
+
+
 
 
 
