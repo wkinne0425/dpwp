@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d92dba2-bafd-46b5-8c13-9080bb2074bd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/madlib.py" afterPath="$PROJECT_DIR$/madlib.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dpwp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="madlib.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/madlib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60943645" vertical-offset="180" max-vertical-offset="1110">
-              <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.5674967" vertical-offset="347" max-vertical-offset="1125">
+              <caret line="52" column="72" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -301,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/madlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60943645" vertical-offset="180" max-vertical-offset="1110">
-          <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.5674967" vertical-offset="347" max-vertical-offset="1125">
+          <caret line="52" column="72" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
           <folding />
         </state>
       </provider>

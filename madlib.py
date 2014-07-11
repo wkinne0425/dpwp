@@ -50,7 +50,8 @@ else:
     a1 = random.randint(0,1)
     n1 = random.randint(2,3)
 
-    print "The " + fill_items[n1] + " was very " + fill_items[a1]
+    print "The " + fill_items[n1] + " went outside and immediately felt " + fill_items[a1] + "."
+
 
 
 
