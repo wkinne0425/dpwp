@@ -50,7 +50,12 @@ else:
     a1 = random.randint(0,1)
     n1 = random.randint(2,3)
 
-    print "The " + fill_items[n1] + " went outside and immediately felt " + fill_items[a1] + "."
+    a2 = random.randint(0,1)
+    n2 = random.randint(2,3)
+
+
+    print "The " + fill_items[n1] + " went outside and immediately felt " + fill_items[a1] + ". 8 hours passed and now the " + fill_items[n2] + " was on the prowl again, but this time  was filled with " + fill_items[a2] + " and could not contain its self."
+
 
 
 
