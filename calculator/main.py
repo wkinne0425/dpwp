@@ -63,6 +63,7 @@ class Golf(object):
     def scoring_average(self):
         return self.__scoring_average
 
+#first setter to change the scoring average if the user wants
     @scoring_average.setter
     def scoring_average(self, new_scoring_average):
         self.__scoring_average = new_scoring_average
