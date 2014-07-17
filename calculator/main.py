@@ -55,6 +55,7 @@ class Golf(object):
             self.round4 = 0
             self.round5 = 0
             self.__scoring_average = 0
+#add 5 rounds of golf and also a private scoring average attr
 
 
     @property
