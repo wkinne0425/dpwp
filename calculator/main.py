@@ -18,6 +18,16 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        self.response.write('''
+
+        <body>
+
+
+        </body>
+
+
+
+        ''')
 #set the attributes for the first golfer
         w = Golf()
         w.round1 = 81
@@ -25,11 +35,11 @@ class MainHandler(webapp2.RequestHandler):
         w.round3 = 85
         w.round4 = 83
         w.round5 = 75
-#tested the setter 
+#tested the setter
         w.scoring_average = 90
         #w.calc_score()
 
-        self.response.write(str(w.scoring_average) + "<br />")
+        self.response.write("<div id='test'> " + str(w.scoring_average) + "</div>")
 #set the attributes for the second golfer
         m = Golf()
         m.round1 = 65
@@ -40,7 +50,18 @@ class MainHandler(webapp2.RequestHandler):
 
         m.calc_score()
 
-        self.response.write(m.scoring_average)
+        self.response.write("<div id='test'> " + str(m.scoring_average) + "</div>")
+
+        p  = Golf()
+        p.round1 = 76
+        p.round2 = 71
+        p.round3 = 85
+        p.round4 = 78
+        p.round5 = 79
+
+        p.calc_score()
+
+        self.response.write("<div id='test'> " + str(p.scoring_average) + "</div>")
 
 
 
