@@ -58,6 +58,7 @@ class Golf(object):
 #add 5 rounds of golf and also a private scoring average attr
 
 
+#first getter to grab the scoring average
     @property
     def scoring_average(self):
         return self.__scoring_average
