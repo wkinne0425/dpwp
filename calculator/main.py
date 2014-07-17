@@ -45,7 +45,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-
+#created a class of golf that will eventually grab the average of 5 rounds of golf
 
 class Golf(object):
     def __init__(self):
