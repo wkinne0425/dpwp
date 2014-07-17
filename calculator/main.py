@@ -29,7 +29,7 @@ class MainHandler(webapp2.RequestHandler):
         #w.calc_score()
 
         self.response.write(str(w.scoring_average) + "<br />")
-
+#set the attributes for the second golfer
         m = Golf()
         m.round1 = 65
         m.round2 = 71
