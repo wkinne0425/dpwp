@@ -18,6 +18,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+#set the attributes for the first golfer
         w = Golf()
         w.round1 = 81
         w.round2 = 77
