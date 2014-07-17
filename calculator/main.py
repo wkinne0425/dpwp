@@ -25,6 +25,7 @@ class MainHandler(webapp2.RequestHandler):
         w.round3 = 85
         w.round4 = 83
         w.round5 = 75
+#tested the setter 
         w.scoring_average = 90
         #w.calc_score()
 
