@@ -68,6 +68,7 @@ class Golf(object):
     def scoring_average(self, new_scoring_average):
         self.__scoring_average = new_scoring_average
 
+#funct to calculate the average of the 5 rounds of golf
     def calc_score(self):
         self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
 
