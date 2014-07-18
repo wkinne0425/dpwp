@@ -1,11 +1,8 @@
-
-
-
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-     head = '''
+        head = '''
         <!doctype html>
 
         <html lang="en">
@@ -17,10 +14,12 @@ class MainHandler(webapp2.RequestHandler):
           <meta name="author" content="SitePoint">
           <link rel="stylesheet" href="css/main.css" />
 
-         </head>
-            '''
 
-    body = '''
+
+        </head>
+        '''
+
+        body = '''
 
         <body>
 
@@ -47,21 +46,21 @@ class MainHandler(webapp2.RequestHandler):
                </form>
                '''
 
-    footer = '''
+        footer = '''
         <footer></footer>
         </body>
         </html>
 
                 '''
 
+        def calc():
 
-    def calc(self):
-        interest = 0
-        loan_amount = self.request.GET['loan']
-        loan_number = int(loan_amount)
-        name = self.request.GET['name']
+            interest = 0
+            loan_amount = self.request.GET['loan']
+            loan_number = int(loan_amount)
+            name = self.request.GET['name']
 
-        if self.request.GET['radio_button'] == 'excellent':
+            if self.request.GET['radio_button'] == 'excellent':
                 interest = 3
                 #self.response.write(interest)
 
@@ -73,42 +72,49 @@ class MainHandler(webapp2.RequestHandler):
                 interest = 8
                 #self.response.write(interest)
 
-        total_interest = (loan_number * interest)
-        number = int(total_interest)
-        final_interest = number / 100.0
-        final_interest_str = str(final_interest)
+            total_interest = (loan_number * interest)
+            number = int(total_interest)
+            final_interest = number / 100.0
+            final_interest_str = str(final_interest)
+            #self.response.write(final_interest)
+            #self.response.write("<br />")
 
-        total_loan = loan_number + final_interest
-        total_loan_str = str(total_loan)
+            total_loan = loan_number + final_interest
+            total_loan_str = str(total_loan)
+            #self.response.write(total_loan)
 
-        term = self.request.GET['length']
-        term_number = int(term)
+            term = self.request.GET['length']
+            term_number = int(term)
 
-        monthly = total_loan / term_number / 12.0
-        monthly_str = str(monthly)
+            monthly = total_loan / term_number / 12.0
+            monthly_str = str(monthly)
+
+            #self.response.write(monthly)
 
 
-        self.response.write("Ok " + name + " here are your loan terms: <br />" )
-        self.response.write("Loan Amount: " + "$" + loan_amount + "<br />")
-        self.response.write("Interest Amount: " + "$" + final_interest_str + "<br />")
-        self.response.write("Total Loan: " + "$" + total_loan_str + "<br />")
-        self.response.write("Monthy Payments: " + "$" + monthly_str)
+
+
+
+
+
+            self.response.write("Ok " + name + " here are your loan terms: <br />" )
+            self.response.write("Loan Amount: " + "$" + loan_amount + "<br />")
+            self.response.write("Interest Amount: " + "$" + final_interest_str + "<br />")
+            self.response.write("Total Loan: " + "$" + total_loan_str + "<br />")
+            self.response.write("Monthy Payments: " + "$" + monthly_str)
+
+
+
+
+
 
 
         if self.request.GET:
-             calc()
+            calc()
         else:
             self.response.write(head + body + footer)
 
 
 
-
-
-
-
-
-
-
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+    ('/', MainHandler)])
