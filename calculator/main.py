@@ -19,9 +19,27 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('''
+        <head>
+        <style>
+        .test{
 
+        width: 35px;
+        margin-left: 550px;
+
+        }
+
+
+
+        .container{
+        border: 1px solid red;
+        width: 600px;
+        }
+
+        </style>
+        </head>
         <body>
 
+        <a href="?test=testing">testing</a>
 
         </body>
 
@@ -39,7 +57,11 @@ class MainHandler(webapp2.RequestHandler):
         w.scoring_average = 90
         #w.calc_score()
 
-        self.response.write("<div id='test'> " + str(w.scoring_average) + "</div>")
+
+        if self.request.GET['test'] == 'testing':
+            self.response.write("<div class='container'><div class='test'> " + str(w.scoring_average) + "</div>")
+        else:
+            self.response.write("nothing")
 #set the attributes for the second golfer
         m = Golf()
         m.round1 = 65
@@ -50,7 +72,7 @@ class MainHandler(webapp2.RequestHandler):
 
         m.calc_score()
 
-        self.response.write("<div id='test'> " + str(m.scoring_average) + "</div>")
+        #self.response.write("<div class='test'> " + str(m.scoring_average) + "</div>")
 
         p  = Golf()
         p.round1 = 76
@@ -61,7 +83,7 @@ class MainHandler(webapp2.RequestHandler):
 
         p.calc_score()
 
-        self.response.write("<div id='test'> " + str(p.scoring_average) + "</div>")
+        #self.response.write("<div class='test'> " + str(p.scoring_average) + "</div></div>")
 
 
 
