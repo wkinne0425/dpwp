@@ -81,6 +81,8 @@ class MainHandler(webapp2.RequestHandler):
         total_loan = loan_number + final_interest
         total_loan_str = str(total_loan)
 
+        term = self.request.GET['length']
+        term_number = int(term)
 
 
 
