@@ -61,6 +61,18 @@ class MainHandler(webapp2.RequestHandler):
         loan_number = int(loan_amount)
         name = self.request.GET['name']
 
+        if self.request.GET['radio_button'] == 'excellent':
+                interest = 3
+                #self.response.write(interest)
+
+            elif self.request.GET['radio_button'] == 'good':
+                interest = 5
+                #self.response.write(interest)
+
+            else:
+                interest = 8
+                #self.response.write(interest)
+
 
 
 
