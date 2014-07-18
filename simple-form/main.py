@@ -5,7 +5,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-         head = '''
+     head = '''
         <!doctype html>
 
         <html lang="en">
@@ -20,7 +20,7 @@ class MainHandler(webapp2.RequestHandler):
          </head>
             '''
 
-        body = '''
+    body = '''
 
         <body>
 
@@ -47,10 +47,15 @@ class MainHandler(webapp2.RequestHandler):
                </form>
                '''
 
+    footer = '''
+        <footer></footer>
+        </body>
+        </html>
+
+                '''
 
 
-
-
+    def calc()
 
 
 
