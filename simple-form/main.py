@@ -88,6 +88,13 @@ class MainHandler(webapp2.RequestHandler):
         monthly_str = str(monthly)
 
 
+        self.response.write("Ok " + name + " here are your loan terms: <br />" )
+        self.response.write("Loan Amount: " + "$" + loan_amount + "<br />")
+        self.response.write("Interest Amount: " + "$" + final_interest_str + "<br />")
+        self.response.write("Total Loan: " + "$" + total_loan_str + "<br />")
+        self.response.write("Monthy Payments: " + "$" + monthly_str)
+
+
 
 
 
