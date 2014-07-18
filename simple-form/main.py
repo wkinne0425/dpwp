@@ -95,6 +95,12 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("Monthy Payments: " + "$" + monthly_str)
 
 
+        if self.request.GET:
+             calc()
+        else:
+            self.response.write(head + body + footer)
+
+
 
 
 
