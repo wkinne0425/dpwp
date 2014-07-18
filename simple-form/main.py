@@ -73,7 +73,10 @@ class MainHandler(webapp2.RequestHandler):
                 interest = 8
                 #self.response.write(interest)
 
-
+        total_interest = (loan_number * interest)
+        number = int(total_interest)
+        final_interest = number / 100.0
+        final_interest_str = str(final_interest)
 
 
 
