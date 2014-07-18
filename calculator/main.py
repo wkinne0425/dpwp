@@ -21,25 +21,40 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write('''
         <head>
         <style>
+        p{
+        float:left;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        }
+
         .test{
-
-        width: 35px;
+        width: 50px;
+        background: black;
         margin-left: 550px;
+        margin-bottom: 10px
 
+
+        }
+
+        .test:hover{
+            cursor: pointer;
+            background: white;
         }
 
 
 
         .container{
-        border: 1px solid red;
+
         width: 600px;
+        height: 600px
         }
 
         </style>
         </head>
         <body>
 
-        <a href="?test=testing">testing</a>
+
 
         </body>
 
@@ -58,10 +73,12 @@ class MainHandler(webapp2.RequestHandler):
         #w.calc_score()
 
 
-        if self.request.GET['test'] == 'testing':
-            self.response.write("<div class='container'><div class='test'> " + str(w.scoring_average) + "</div>")
-        else:
-            self.response.write("nothing")
+
+        self.response.write("<div class='container'><p>Please hover over black box to see Walker's scoring average</p><div class='test'> " + str(w.scoring_average) + "</div>")
+
+
+
+
 #set the attributes for the second golfer
         m = Golf()
         m.round1 = 65
@@ -72,7 +89,7 @@ class MainHandler(webapp2.RequestHandler):
 
         m.calc_score()
 
-        #self.response.write("<div class='test'> " + str(m.scoring_average) + "</div>")
+        self.response.write("<p>Please hover over black box to see Marisa's scoring average</p><div class='test'> " + str(m.scoring_average) + "</div>")
 
         p  = Golf()
         p.round1 = 76
@@ -83,8 +100,29 @@ class MainHandler(webapp2.RequestHandler):
 
         p.calc_score()
 
-        #self.response.write("<div class='test'> " + str(p.scoring_average) + "</div></div>")
+        self.response.write("<p>Please hover over black box to see Pinky's scoring average</p><div class='test'> " + str(p.scoring_average) + "</div>")
 
+        d  = Golf()
+        d.round1 = 66
+        d.round2 = 78
+        d.round3 = 59
+        d.round4 = 87
+        d.round5 = 90
+
+        d.calc_score()
+
+        self.response.write("<p>Please hover over black box to see Dad's scoring average</p><div class='test'> " + str(d.scoring_average) + "</div>")
+
+        a  = Golf()
+        a.round1 = 90
+        a.round2 = 67
+        a.round3 = 85
+        a.round4 = 90
+        a.round5 = 106
+
+        a.calc_score()
+
+        self.response.write("<p>Please hover over black box to see Alan's scoring average</p><div class='test'> " + str(a.scoring_average) + "</div></div>")
 
 
 
