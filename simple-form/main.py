@@ -78,6 +78,10 @@ class MainHandler(webapp2.RequestHandler):
         final_interest = number / 100.0
         final_interest_str = str(final_interest)
 
+        total_loan = loan_number + final_interest
+        total_loan_str = str(total_loan)
+
+
 
 
 
