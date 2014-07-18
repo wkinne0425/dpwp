@@ -56,11 +56,12 @@ class MainHandler(webapp2.RequestHandler):
 #function that does all the magic
         def calc():
 
+            #begining attributes
             interest = 0
             loan_amount = self.request.GET['loan']
             loan_number = int(loan_amount)
             name = self.request.GET['name']
-
+            #sets interest rate according to selections
             if self.request.GET['radio_button'] == 'excellent':
                 interest = 3
                 #self.response.write(interest)
