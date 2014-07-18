@@ -2,6 +2,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #header of the page
         head = '''
         <!doctype html>
 
