@@ -53,7 +53,7 @@ class MainHandler(webapp2.RequestHandler):
         </html>
 
                 '''
-
+#function that does all the magic
         def calc():
 
             interest = 0
