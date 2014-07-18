@@ -55,7 +55,7 @@ class MainHandler(webapp2.RequestHandler):
                 '''
 
 
-    def calc():
+    def calc(self):
         interest = 0
         loan_amount = self.request.GET['loan']
         loan_number = int(loan_amount)
@@ -84,6 +84,8 @@ class MainHandler(webapp2.RequestHandler):
         term = self.request.GET['length']
         term_number = int(term)
 
+        monthly = total_loan / term_number / 12.0
+        monthly_str = str(monthly)
 
 
 
