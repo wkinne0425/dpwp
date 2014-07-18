@@ -55,7 +55,11 @@ class MainHandler(webapp2.RequestHandler):
                 '''
 
 
-    def calc()
+    def calc():
+        interest = 0
+        loan_amount = self.request.GET['loan']
+        loan_number = int(loan_amount)
+        name = self.request.GET['name']
 
 
 
