@@ -19,7 +19,7 @@ class MainHandler(webapp2.RequestHandler):
 
         </head>
         '''
-
+    #Body of the page
         body = '''
 
         <body>
