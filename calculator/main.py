@@ -3,66 +3,58 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
-
-        if self.request.GET:
-            page = Page()
-            self.response.write(page.print_all())
-        else: self.response.write("It worked")
-
-
-
-
-        #set the attributes for the first golfer
+        page = Page()
         w = Golf()
-        w.round1 = 81
-        w.round2 = 77
+        w.round1 = 80
+        w.round2 = 70
         w.round3 = 85
-        w.round4 = 83
-        w.round5 = 75
+        w.round4 = 90
+        w.round5 = 100
 
-        w.scoring_average = 90
-        w.calc_score()
-
-
-#set the attributes for the second golfer
         m = Golf()
-        m.round1 = 65
-        m.round2 = 71
-        m.round3 = 80
-        m.round4 = 68
-        m.round5 = 70
+        m.round1 = 80
+        m.round2 = 77
+        m.round3 = 88
+        m.round4 = 98
+        m.round5 = 65
 
-        m.calc_score()
-
-        p  = Golf()
+        p = Golf()
         p.round1 = 76
-        p.round2 = 71
-        p.round3 = 85
-        p.round4 = 78
-        p.round5 = 79
+        p.round2 = 70
+        p.round3 = 108
+        p.round4 = 95
+        p.round5 = 68
 
-        #p.calc_score()
+        s = Golf()
+        s.round1 = 89
+        s.round2 = 72
+        s.round3 = 99
+        s.round4 = 95
+        s.round5 = 100
+
+        a = Golf()
+        a.round1 = 71
+        a.round2 = 72
+        a.round3 = 66
+        a.round4 = 95
+        a.round5 = 80
 
 
-        d  = Golf()
-        d.round1 = 66
-        d.round2 = 78
-        d.round3 = 59
-        d.round4 = 87
-        d.round5 = 90
-
-        #d.calc_score()
 
 
-        a  = Golf()
-        a.round1 = 90
-        a.round2 = 67
-        a.round3 = 85
-        a.round4 = 90
-        a.round5 = 106
+        if (self.request.GET and self.request.GET['golfer'] == 'walker'):
+            self.response.write(page.head + page.body + str(w.calc_score()) + page.close)
+        elif (self.request.GET and self.request.GET['golfer'] == 'marisa'):
+            self.response.write(m.calc_score())
+        elif (self.request.GET and self.request.GET['golfer'] == 'pinky'):
+            self.response.write(p.calc_score())
+        elif (self.request.GET and self.request.GET['golfer'] == 'scott'):
+            self.response.write(s.calc_score())
+        elif (self.request.GET and self.request.GET['golfer'] == 'alan'):
+            self.response.write(a.calc_score())
+        else: self.response.write(page.print_all())
 
-        #a.calc_score()
+
 
 
 
@@ -75,6 +67,7 @@ class Page(object):
             <html>
             <head>
             <title></title>
+            <link rel="stylesheet" href="css/main.css" />
             </head>
             <body>
         '''
@@ -107,11 +100,6 @@ class Page(object):
 
 
 
-
-
-
-#created a class of golf that will eventually grab the average of 5 rounds of golf
-
 class Golf(object):
     def __init__(self):
             self.round1 = 0
@@ -120,6 +108,12 @@ class Golf(object):
             self.round4 = 0
             self.round5 = 0
             self.__scoring_average = 0
+
+
+
+#created a class of golf that will eventually grab the average of 5 rounds of golf
+
+
 #add 5 rounds of golf and also a private scoring average attr
 
 
@@ -136,7 +130,7 @@ class Golf(object):
 #funct to calculate the average of the 5 rounds of golf
     def calc_score(self):
         self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
-        print self.__scoring_average
+        return self.__scoring_average
 
 
 
