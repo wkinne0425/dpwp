@@ -1,82 +1,22 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('''
-        <head>
-        <style>
-        p{
-        float:left;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 10px;
-        }
+        page = Page()
 
-        .test{
-        width: 50px;
-        background: black;
-        margin-left: 550px;
-        margin-bottom: 10px
+        self.response.write(page.print_html())
 
-
-        }
-
-        .test:hover{
-            cursor: pointer;
-            background: white;
-        }
-
-
-
-        .container{
-
-        width: 600px;
-        height: 600px
-        }
-
-        </style>
-        </head>
-        <body>
-
-
-
-        </body>
-
-
-
-        ''')
-#set the attributes for the first golfer
+        #set the attributes for the first golfer
         w = Golf()
         w.round1 = 81
         w.round2 = 77
         w.round3 = 85
         w.round4 = 83
         w.round5 = 75
-#tested the setter
+
         w.scoring_average = 90
         #w.calc_score()
-
-
-
-        self.response.write("<div class='container'><p>Please hover over black box to see Walker's scoring average</p><div class='test'> " + str(w.scoring_average) + "</div>")
-
-
 
 
 #set the attributes for the second golfer
@@ -87,9 +27,7 @@ class MainHandler(webapp2.RequestHandler):
         m.round4 = 68
         m.round5 = 70
 
-        m.calc_score()
-
-        self.response.write("<p>Please hover over black box to see Marisa's scoring average</p><div class='test'> " + str(m.scoring_average) + "</div>")
+        #m.calc_score()
 
         p  = Golf()
         p.round1 = 76
@@ -98,9 +36,8 @@ class MainHandler(webapp2.RequestHandler):
         p.round4 = 78
         p.round5 = 79
 
-        p.calc_score()
+        #p.calc_score()
 
-        self.response.write("<p>Please hover over black box to see Pinky's scoring average</p><div class='test'> " + str(p.scoring_average) + "</div>")
 
         d  = Golf()
         d.round1 = 66
@@ -109,9 +46,8 @@ class MainHandler(webapp2.RequestHandler):
         d.round4 = 87
         d.round5 = 90
 
-        d.calc_score()
+        #d.calc_score()
 
-        self.response.write("<p>Please hover over black box to see Dad's scoring average</p><div class='test'> " + str(d.scoring_average) + "</div>")
 
         a  = Golf()
         a.round1 = 90
@@ -120,9 +56,48 @@ class MainHandler(webapp2.RequestHandler):
         a.round4 = 90
         a.round5 = 106
 
-        a.calc_score()
+        #a.calc_score()
 
-        self.response.write("<p>Please hover over black box to see Alan's scoring average</p><div class='test'> " + str(a.scoring_average) + "</div></div>")
+
+
+
+
+class Page(object):
+    def __init__(self):
+        self.head = '''
+        <!DOCTYPE>
+            <html>
+            <head>
+            <title></title>
+            </head>
+            <body>
+        '''
+        self.body = '''
+
+
+
+        '''
+
+        self.close = '''
+
+        </body>
+        </html>
+        '''
+
+        self.links = '''
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        '''
+    def print_html(self):
+        self.all = self.head + self.body + self.links + self.close
+        return self.all
+
+
+
+
 
 
 
