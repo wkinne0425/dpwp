@@ -26,3 +26,8 @@ p{
         width: 600px;
         height: 600px
         }
+
+        a{
+        display: block;
+        color: black;
+        }

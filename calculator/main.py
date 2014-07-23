@@ -3,9 +3,15 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        page = Page()
 
-        self.response.write(page.print_html())
+
+        if self.request.GET:
+            page = Page()
+            self.response.write(page.print_all())
+        else: self.response.write("It worked")
+
+
+
 
         #set the attributes for the first golfer
         w = Golf()
@@ -16,7 +22,7 @@ class MainHandler(webapp2.RequestHandler):
         w.round5 = 75
 
         w.scoring_average = 90
-        #w.calc_score()
+        w.calc_score()
 
 
 #set the attributes for the second golfer
@@ -27,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
         m.round4 = 68
         m.round5 = 70
 
-        #m.calc_score()
+        m.calc_score()
 
         p  = Golf()
         p.round1 = 76
@@ -85,15 +91,16 @@ class Page(object):
         '''
 
         self.links = '''
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
+        <a href="?golfer=marisa">Marisa</a>
+        <a href="?golfer=walker">Walker</a>
+        <a href="?golfer=pinky">Pinky</a>
+        <a href="?golfer=alan">Alan</a>
+        <a href="?golfer=scott">Scott</a>
         '''
-    def print_html(self):
-        self.all = self.head + self.body + self.links + self.close
-        return self.all
+    def print_all(self):
+
+         self.all = self.head + self.body + self.links + self.close
+         return self.all
 
 
 
@@ -129,6 +136,7 @@ class Golf(object):
 #funct to calculate the average of the 5 rounds of golf
     def calc_score(self):
         self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
+        print self.__scoring_average
 
 
 
