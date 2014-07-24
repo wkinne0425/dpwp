@@ -4,12 +4,13 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        a = Animal()
-        #a.info =[ ['why'], ['wont'], ['this'], ['work'] ]
+        bird = Animal()
 
-        a.list_all()
+        bird.Phylum = "Top"
 
-        self.response.write(a.print_all())
+
+
+        self.response.write(bird.display_info())
 
 
 
@@ -39,14 +40,16 @@ class Page(object):
         </body>
         </html>
         '''
-
-        self.links = '''
+        
+        '''
+        self.links =
         <a href="?golfer=marisa">Marisa</a>
         <a href="?golfer=walker">Walker</a>
         <a href="?golfer=pinky">Pinky</a>
         <a href="?golfer=alan">Alan</a>
         <a href="?golfer=scott">Scott</a>
         '''
+
     def print_all(self):
 
          self.all = self.head + self.body + self.links + self.close
@@ -58,7 +61,7 @@ class Animal(Page):
     def __init__(self):
         Page.__init__(self)
 
-        self.testing = [ ['0'], ['1'], ['2']]
+        #self.testing = [ '["hello"]' , ["world"]]
 
 
         self.Phylum = ""
@@ -73,10 +76,17 @@ class Animal(Page):
 
         self.test = ''
 
-    def list_all(self):
-        for item in self.testing:
-         print item[0]
+    def display_info(self):
+        self.display = self.body + self.Phylum
+        self.display_everything = self.all = self.head + self.display + self.links + self.close
 
+        return self.display_everything
+'''
+    def list_all(self):
+        for items in self.testing:
+         print len(items)
+         print items[1]
+'''
 
 
 
