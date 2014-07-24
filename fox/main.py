@@ -4,13 +4,18 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        bird = Animal()
+        stiger = AbstractAnimal()
 
-        bird.Phylum = "Top"
+        stiger.Phylum = "Chordata"
+        stiger.Class = "Mammalia"
+        stiger.Order = "Carnivora"
+        stiger.Family = "Felidae"
+        stiger.Genus = "Panthera tigris"
+        stiger.Image = "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />"
 
 
 
-        self.response.write(bird.display_info())
+        self.response.write(stiger.list_all())
 
 
 
@@ -40,7 +45,7 @@ class Page(object):
         </body>
         </html>
         '''
-        
+
         '''
         self.links =
         <a href="?golfer=marisa">Marisa</a>
@@ -50,6 +55,8 @@ class Page(object):
         <a href="?golfer=scott">Scott</a>
         '''
 
+
+
     def print_all(self):
 
          self.all = self.head + self.body + self.links + self.close
@@ -57,11 +64,11 @@ class Page(object):
 
 
 
-class Animal(Page):
+class AbstractAnimal(Page):
     def __init__(self):
         Page.__init__(self)
 
-        #self.testing = [ '["hello"]' , ["world"]]
+
 
 
         self.Phylum = ""
@@ -73,20 +80,28 @@ class Animal(Page):
         self.Avg = ""
         self.Geo = ""
 
+        self.list = []
 
-        self.test = ''
+        self.list.extend(self.Phylum)
+
+
+
 
     def display_info(self):
-        self.display = self.body + self.Phylum
-        self.display_everything = self.all = self.head + self.display + self.links + self.close
+        self.display = self.body + self.Phylum + self.Class + self.Order + self.Family + self.Genus + self.Image
+        self.display_everything = self.all = self.head + self.display + self.close
 
         return self.display_everything
-'''
+
     def list_all(self):
-        for items in self.testing:
-         print len(items)
-         print items[1]
-'''
+
+        for index,value in enumerate(self.list):
+            print index,value
+
+
+
+        #print self.Phylum
+
 
 
 
@@ -97,18 +112,13 @@ class Animal(Page):
 
     @info.setter
     def info(self,arr):
-        self.__info = arr
+        self.__arr = arr
+        '''
 
-        for item in arr:
 
-            self.Phylum = item[0]
-            self.Class = item[1]
-            self.Order = item[2]
 
-            print self.Phylum + self.Class + self.Order
 
-            print item[1]
-'''
+
 
 
 
