@@ -4,6 +4,7 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = Animal()
+        p.info = ['hello' , 'world', 'does this work']
 
 
         self.response.write(p.print_all())
@@ -68,11 +69,16 @@ class Animal(object):
         '''
 
     @property
+    def info(self):
+        pass
+
+    @info.setter
     def info(self,arr):
         self.__info = arr
 
         for item in arr:
             print item
+
 
 
 
