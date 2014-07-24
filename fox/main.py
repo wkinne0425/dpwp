@@ -5,9 +5,9 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
 
         a = Animal()
-        a.info = ['hello' , 'world', 'does this work']
+        #a.info =[ ['why'], ['wont'], ['this'], ['work'] ]
 
-
+        a.list_all()
 
         self.response.write(a.print_all())
 
@@ -58,8 +58,9 @@ class Animal(Page):
     def __init__(self):
         Page.__init__(self)
 
-        self.__info = []
-        '''
+        self.testing = [ ['0'], ['1'], ['2']]
+
+
         self.Phylum = ""
         self.Class = ""
         self.Order = ""
@@ -68,9 +69,18 @@ class Animal(Page):
         self.Image = ""
         self.Avg = ""
         self.Geo = ""
-        '''
-        
 
+
+        self.test = ''
+
+    def list_all(self):
+        for item in self.testing:
+         print item[0]
+
+
+
+
+'''
     @property
     def info(self):
         pass
@@ -81,7 +91,14 @@ class Animal(Page):
 
         for item in arr:
 
+            self.Phylum = item[0]
+            self.Class = item[1]
+            self.Order = item[2]
 
+            print self.Phylum + self.Class + self.Order
+
+            print item[1]
+'''
 
 
 
