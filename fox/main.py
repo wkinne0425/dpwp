@@ -3,11 +3,13 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        p = Animal()
-        p.info = ['hello' , 'world', 'does this work']
+
+        a = Animal()
+        a.info = ['hello' , 'world', 'does this work']
 
 
-        self.response.write(p.print_all())
+
+        self.response.write(a.print_all())
 
 
 
@@ -52,9 +54,9 @@ class Page(object):
 
 
 
-class Animal(object):
+class Animal(Page):
     def __init__(self):
-        #Page.__init__(self)
+        Page.__init__(self)
 
         self.__info = []
         '''
@@ -67,6 +69,7 @@ class Animal(object):
         self.Avg = ""
         self.Geo = ""
         '''
+        
 
     @property
     def info(self):
@@ -77,7 +80,7 @@ class Animal(object):
         self.__info = arr
 
         for item in arr:
-            print item
+
 
 
 
