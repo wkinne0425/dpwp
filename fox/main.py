@@ -119,8 +119,7 @@ class AbstractAnimal(Page):
              self.Sound = "<div>" + item[7] + "</div>"
              self.Link = item[8]
 
-
-
+#opens html
     def open(self):
         return self.head
 
