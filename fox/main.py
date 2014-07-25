@@ -125,7 +125,7 @@ class AbstractAnimal(Page):
 #closes html
     def close(self):
         return self.html_close
-
+#prints everything inside html
     def print_all(self):
         self.all = self.container_open +  self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image  + self.Link + self.container_close
 
