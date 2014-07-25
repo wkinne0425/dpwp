@@ -6,15 +6,22 @@ class MainHandler(webapp2.RequestHandler):
 
         tiger = AbstractAnimal()
         shark = AbstractAnimal()
+        bird = AbstractAnimal()
 
-        tiger.inputs = [ ("Lion", "Chordata", "Mammalia", "Carnivora", "Felidae", "Panthera tigris", "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>", "<link href='?sound=lion'>Lion</link>")]
+
+        tiger.inputs = [ ("Lion", "Chordata", "Mammalia", "Carnivora", "Felidae", "Panthera tigris", "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>", "<a href='?sound=lion'>Lion</a>")]
         #stiger.inputs = [1,2,3,4,5]
-        self.response.write(tiger.print_all())
-        shark.inputs = [ ("Shark", "Chordata", "Chondrichthyes", "Pristiophoiformes ", "Lamnidae", "Isurus oxyrinchus", "<img src='http://2.bp.blogspot.com/-1acB83dcmAk/UK2X6orz4LI/AAAAAAAACDs/L_5a6wcYwxA/s1600/Silvertip+Sharks2.jpg' />", "<embed height='50' width='100' src='audio/jaw_theme.mp3'>", "<link href='?sound=lion'>Shark</link>")]
-        self.response.write(shark.print_all())
+        #self.response.write(tiger.print_all())
+        shark.inputs = [ ("Shark", "Chordata", "Chondrichthyes", "Pristiophoiformes ", "Lamnidae", "Isurus oxyrinchus", "<img src='http://2.bp.blogspot.com/-1acB83dcmAk/UK2X6orz4LI/AAAAAAAACDs/L_5a6wcYwxA/s1600/Silvertip+Sharks2.jpg' />", "<embed height='50' width='100' src='audio/jaw_theme.mp3'>", "<a href='?sound=shark'>Shark</a>")]
+        #self.response.write(shark.print_all())
 
 
 
+        if (self.request.GET and self.request.GET['sound'] == 'shark'):
+            self.response.write(tiger.open() + shark.print_all() + shark.play() +  tiger.html_close)
+        elif (self.request.GET and self.request.GET['sound'] == 'lion'):
+            self.response.write(tiger.open() + tiger.print_all() + tiger.play() +  tiger.html_close)
+        else: self.response.write(tiger.open() + tiger.print_all() + shark.print_all() +  tiger.html_close )
 
 
 
@@ -38,7 +45,7 @@ class Page(object):
         self.ul_open = "<ul>"
         self.ul_close = "</ul>"
 
-        self.close = '''
+        self.html_close = '''
 
         </body>
         </html>
@@ -106,10 +113,14 @@ class AbstractAnimal(Page):
 
 
 
+    def open(self):
+        return self.head
 
+    def close(self):
+        return self.html_close
 
     def print_all(self):
-        self.all = self.head + self.body + self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image +  self.Sound + self.Link + self.close
+        self.all =  self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image  + self.Link
 
         return self.all
 
