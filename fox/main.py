@@ -74,13 +74,14 @@ class Page(object):
          return self.all
 
 
-
+#This class creates and displays all the info
 class AbstractAnimal(Page):
     def __init__(self):
+        #inherites the Page class
         Page.__init__(self)
 
 
-
+        #all the attributes needed
         self.Title = ""
         self.Phylum = ""
         self.Class = ""
@@ -94,7 +95,7 @@ class AbstractAnimal(Page):
         self.Link = ""
 
 
-
+        #stores all the data in a array
         self.__inputs = []
 
 
@@ -103,6 +104,7 @@ class AbstractAnimal(Page):
     @property
     def inputs(self):
         pass
+    #Sets all the data and also loops the array
     @inputs.setter
     def inputs(self,arr):
         self.__inputs = arr
