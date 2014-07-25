@@ -28,7 +28,7 @@ class MainHandler(webapp2.RequestHandler):
         else: self.response.write(tiger.open() + tiger.print_all() + shark.print_all() + bird.print_all() +  tiger.html_close )
 
 
-
+#This creates all the page attributes for the html
 class Page(object):
     def __init__(self):
         self.head = '''
