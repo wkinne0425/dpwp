@@ -122,7 +122,7 @@ class AbstractAnimal(Page):
 #opens html
     def open(self):
         return self.head
-
+#closes html
     def close(self):
         return self.html_close
 
