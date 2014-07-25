@@ -18,7 +18,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-
+#conditional statement that checks url and displays accordingly
         if (self.request.GET and self.request.GET['sound'] == 'shark'):
             self.response.write(tiger.open() + shark.print_all() + shark.play() +  tiger.html_close)
         elif (self.request.GET and self.request.GET['sound'] == 'lion'):
