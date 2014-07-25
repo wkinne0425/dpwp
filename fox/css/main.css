@@ -4,3 +4,11 @@ a{
 display: block;
 text-decoration: none;
 }
+
+li{
+list-style-type: none;
+}
+
+img{
+width: 10%;
+}

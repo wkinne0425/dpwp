@@ -4,19 +4,14 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        stiger = AbstractAnimal()
+        tiger = AbstractAnimal()
+        shark = AbstractAnimal()
 
-        stiger.Phylum = "Chordata"
-        stiger.Class = "Mammalia"
-        stiger.Order = "Carnivora"
-        stiger.Family = "Felidae"
-        stiger.Genus = "Panthera tigris"
-        stiger.Image = "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />"
-
-
-
-        self.response.write(stiger.list_all())
-
+        tiger.inputs = [ ("Lion", "Chordata", "Mammalia", "Carnivora", "Felidae", "Panthera tigris", "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>")]
+        #stiger.inputs = [1,2,3,4,5]
+        self.response.write(tiger.print_all())
+        shark.inputs = [ ("Shark", "Chordata", "Chondrichthyes", "Pristiophoiformes ", "Lamnidae", "Isurus oxyrinchus", "<img src='http://2.bp.blogspot.com/-1acB83dcmAk/UK2X6orz4LI/AAAAAAAACDs/L_5a6wcYwxA/s1600/Silvertip+Sharks2.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>")]
+        self.response.write(shark.print_all())
 
 
 
@@ -39,6 +34,9 @@ class Page(object):
 
 
         '''
+
+        self.ul_open = "<ul>"
+        self.ul_close = "</ul>"
 
         self.close = '''
 
@@ -70,7 +68,7 @@ class AbstractAnimal(Page):
 
 
 
-
+        self.Title = ""
         self.Phylum = ""
         self.Class = ""
         self.Order = ""
@@ -79,75 +77,41 @@ class AbstractAnimal(Page):
         self.Image = ""
         self.Avg = ""
         self.Geo = ""
-
-        self.list = []
-
-        self.list.extend(self.Phylum)
+        self.Sound = ""
 
 
 
-
-    def display_info(self):
-        self.display = self.body + self.Phylum + self.Class + self.Order + self.Family + self.Genus + self.Image
-        self.display_everything = self.all = self.head + self.display + self.close
-
-        return self.display_everything
-
-    def list_all(self):
-
-        for index,value in enumerate(self.list):
-            print index,value
-
-
-
-        #print self.Phylum
+        self.__inputs = []
 
 
 
 
-'''
     @property
-    def info(self):
+    def inputs(self):
         pass
+    @inputs.setter
+    def inputs(self,arr):
+        self.__inputs = arr
+        for item in arr:
+             self.Title = "<h1>" + item[0] + "</h1>"
+             self.Phylum =  "<li>" + item[1] + "</li>"
+             self.Class = "<li>" + item[2] + "</li>"
+             self.Order = "<li>" + item[3] + "</li>"
+             self.Family = "<li>" + item[4] + "</li>"
+             self.Genus = "<li>" + item[5] + "</li>"
+             self.Image = "<div>" + item[6] + "</div>"
+             self.Sound = "<div>" + item[7] + "</div>"
 
-    @info.setter
-    def info(self,arr):
-        self.__arr = arr
-        '''
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
+    def print_all(self):
+        self.all = self.head + self.body + self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image +  self.Sound + self.close
+
+        return self.all
 
 
-
-
-
-
-'''
-    @property
-    def scoring_average(self):
-        return self.__scoring_average
-
-#first setter to change the scoring average if the user wants
-    @scoring_average.setter
-    def scoring_average
-
-#funct to calculate the average of the 5 rounds of golf
-    def calc_score(self):
-        self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
-        return self.__scoring_average
-'''
 
 
 app = webapp2.WSGIApplication([
