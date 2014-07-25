@@ -7,10 +7,10 @@ class MainHandler(webapp2.RequestHandler):
         tiger = AbstractAnimal()
         shark = AbstractAnimal()
 
-        tiger.inputs = [ ("Lion", "Chordata", "Mammalia", "Carnivora", "Felidae", "Panthera tigris", "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>")]
+        tiger.inputs = [ ("Lion", "Chordata", "Mammalia", "Carnivora", "Felidae", "Panthera tigris", "<img src='http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/siberian-tiger_707_600x450.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>", "<link href='?sound=lion'>Lion</link>")]
         #stiger.inputs = [1,2,3,4,5]
         self.response.write(tiger.print_all())
-        shark.inputs = [ ("Shark", "Chordata", "Chondrichthyes", "Pristiophoiformes ", "Lamnidae", "Isurus oxyrinchus", "<img src='http://2.bp.blogspot.com/-1acB83dcmAk/UK2X6orz4LI/AAAAAAAACDs/L_5a6wcYwxA/s1600/Silvertip+Sharks2.jpg' />", "<embed height='50' width='100' src='audio/lion.mp3'>")]
+        shark.inputs = [ ("Shark", "Chordata", "Chondrichthyes", "Pristiophoiformes ", "Lamnidae", "Isurus oxyrinchus", "<img src='http://2.bp.blogspot.com/-1acB83dcmAk/UK2X6orz4LI/AAAAAAAACDs/L_5a6wcYwxA/s1600/Silvertip+Sharks2.jpg' />", "<embed height='50' width='100' src='audio/jaw_theme.mp3'>", "<link href='?sound=lion'>Shark</link>")]
         self.response.write(shark.print_all())
 
 
@@ -78,6 +78,7 @@ class AbstractAnimal(Page):
         self.Avg = ""
         self.Geo = ""
         self.Sound = ""
+        self.Link = ""
 
 
 
@@ -101,17 +102,19 @@ class AbstractAnimal(Page):
              self.Genus = "<li>" + item[5] + "</li>"
              self.Image = "<div>" + item[6] + "</div>"
              self.Sound = "<div>" + item[7] + "</div>"
+             self.Link = item[8]
 
-    
+
 
 
 
     def print_all(self):
-        self.all = self.head + self.body + self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image +  self.Sound + self.close
+        self.all = self.head + self.body + self.Title + self.ul_open + self.Phylum + self.Class + self.Order + self.Family + self.Genus  + self.ul_close + self.Image +  self.Sound + self.Link + self.close
 
         return self.all
 
-
+    def play(self):
+        return self.Sound
 
 
 app = webapp2.WSGIApplication([
