@@ -9,8 +9,12 @@ class MainHandler(webapp2.RequestHandler):
         url = DisplayHeadline()
 
 
+
+
         if self.request.GET:
+            url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_open())
+            self.response.write(url.return_url())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_open())
@@ -18,11 +22,11 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(page.print_close())
 
 
-        url.ticker = self.request.GET["ticker"]
 
 
 
-        
+
+
 
 
 
