@@ -20,8 +20,8 @@ class MainHandler(webapp2.RequestHandler):
             result = opener.open(request)
             xmldoc = minidom.parse(result)
 
-            self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue)
-            self.response.write(url.return_url())
+            self.response.write(xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "<br />" + xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue )
+
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_open())
