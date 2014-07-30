@@ -18,9 +18,10 @@ class MainHandler(webapp2.RequestHandler):
             request = urllib2.Request(url.return_url())
             opener = urllib2.build_opener()
             result = opener.open(request)
-            print result
-            self.response.write(page.print_open())
+            xmldoc = minidom.parse(result)
 
+            self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue)
+            self.response.write(url.return_url())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_open())
