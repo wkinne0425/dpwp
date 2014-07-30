@@ -6,15 +6,18 @@ import urllib2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = Page()
-        url = DisplayHeadline()
+        url = DisplayHeadlines()
 
 
 
 
         if self.request.GET:
             url.ticker = self.request.GET["ticker"]
+            request = urllib2.Request(url.return_url())
+            opener = urllib2.build_opener()
+            result = opener.open(request)
             self.response.write(page.print_open())
-            self.response.write(url.return_url())
+
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_open())
@@ -86,18 +89,25 @@ class Page(object):
 
 
 #This class creates and displays all the info
-class DisplayHeadline(object):
+class Ticker(object):
     def __init__(self):
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
 
 
 
+
     def return_url(self):
+
         self.final = self.url + self.ticker
+
         return self.final
 
 
+
+class DisplayHeadlines(Ticker):
+    def __init__(self):
+        Ticker.__init__(self)
 
 
 
