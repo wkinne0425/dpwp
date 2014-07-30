@@ -1,14 +1,30 @@
 
 import webapp2
+import urllib2
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = Page()
         url = DisplayHeadline()
 
-        self.response.write(url.return_url())
 
-        url.ticker = "yhoo"
+        if self.request.GET:
+            self.response.write(page.print_open())
+            self.response.write(page.print_close())
+        else:
+            self.response.write(page.print_open())
+            self.response.write(page.input)
+            self.response.write(page.print_close())
+
+
+        url.ticker = self.request.GET["ticker"]
+
+
+
+        
+
+
 
 
 
@@ -39,6 +55,13 @@ class Page(object):
         self.container_open = "<div class='cont'>"
         self.container_close = "</div>"
 
+        self.input = '''
+        <form method="GET" action="">
+        <label>Ticker: </label><input type="text" name="ticker" />
+        <input class="button" type="submit" value="Submit" />
+               </form>
+        '''
+
         self.html_close = '''
 
         </body>
@@ -49,33 +72,41 @@ class Page(object):
 
 
 
-    def print_all(self):
+    def print_open(self):
 
-         self.all = self.head + self.body +  self.html_close
-         return self.all
+         self.open = self.head + self.body
+         return self.open
+
+    def print_close(self):
+        return self.html_close
 
 
 #This class creates and displays all the info
 class DisplayHeadline(object):
     def __init__(self):
         self.url = "http://finance.yahoo.com/rss/headline?s="
-        self.__ticker = ""
+        self.ticker = ""
+
+
+
     def return_url(self):
-        self.final = self.url + self.__ticker
+        self.final = self.url + self.ticker
         return self.final
 
 
 
 
 
+'''
     @property
     def ticker(self):
         pass
     #Sets all the data and also loops the array
     @ticker.setter
-    def ticker(self,str):
-        self.__ticker = str
-        print str
+    def ticker(self):
+        pass
+  '''
+
 
 
 
