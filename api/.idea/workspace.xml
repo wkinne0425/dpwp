@@ -26,12 +26,11 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2880922" vertical-offset="0" max-vertical-offset="1290">
-              <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.07682458" vertical-offset="0" max-vertical-offset="1545">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#1#15#0" expanded="true" />
-                <element signature="e#733#1630#0" expanded="false" />
-                <element signature="e#1702#1910#0" expanded="false" />
+                <element signature="e#787#1684#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -286,8 +285,7 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#733#1630#0" expanded="false" />
-            <element signature="e#1702#1910#0" expanded="false" />
+            <element signature="e#787#1684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -298,8 +296,7 @@
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#733#1630#0" expanded="false" />
-            <element signature="e#1702#1910#0" expanded="false" />
+            <element signature="e#787#1684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -317,8 +314,7 @@
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#733#1630#0" expanded="false" />
-            <element signature="e#1702#1910#0" expanded="false" />
+            <element signature="e#787#1684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -336,8 +332,7 @@
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#733#1630#0" expanded="false" />
-            <element signature="e#1702#1910#0" expanded="false" />
+            <element signature="e#787#1684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -351,12 +346,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2880922" vertical-offset="0" max-vertical-offset="1290">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.07682458" vertical-offset="0" max-vertical-offset="1545">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#733#1630#0" expanded="false" />
-            <element signature="e#1702#1910#0" expanded="false" />
+            <element signature="e#787#1684#0" expanded="false" />
           </folding>
         </state>
       </provider>

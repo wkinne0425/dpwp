@@ -1,6 +1,8 @@
 
 import webapp2
 import urllib2
+from xml.dom import minidom
+
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -16,6 +18,7 @@ class MainHandler(webapp2.RequestHandler):
             request = urllib2.Request(url.return_url())
             opener = urllib2.build_opener()
             result = opener.open(request)
+            print result
             self.response.write(page.print_open())
 
             self.response.write(page.print_close())
@@ -93,7 +96,7 @@ class Ticker(object):
     def __init__(self):
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
-
+        self.final = ""
 
 
 
@@ -108,6 +111,8 @@ class Ticker(object):
 class DisplayHeadlines(Ticker):
     def __init__(self):
         Ticker.__init__(self)
+
+
 
 
 
