@@ -63,6 +63,7 @@ class Page(object):
             <head>
             <title></title>
             <link rel="stylesheet" href="css/main.css" />
+            <link href='http://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet' type='text/css'>
             </head>
             <body>
         '''
