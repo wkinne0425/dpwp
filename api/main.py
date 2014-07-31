@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
         elif self.request.GET and self.request.GET["ticker"]:
             url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_results_open())
-            self.response.write("<h1>Top 3 results for " + url.ticker + "</h1>")
+            self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
             self.response.write(url.display())
             self.response.write(page.print_close())
 
@@ -149,13 +149,13 @@ class DisplayHeadlines(Ticker):
         self.opener = urllib2.build_opener()
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
-        self.header_1 = "<h1>" + self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "</h1>"
+        self.header_1 = "<h3>" + self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "</h3>"
         self.link_1 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 
-        self.header_2 = "<h1>" + self.xmldoc.getElementsByTagName('title')[3].firstChild.nodeValue + "</h1>"
+        self.header_2 = "<h3>" + self.xmldoc.getElementsByTagName('title')[3].firstChild.nodeValue + "</h3>"
         self.link_2 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[3].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 
-        self.header_3 = "<h1>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h1>"
+        self.header_3 = "<h3>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h3>"
         self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 
         return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a href='http://localhost:12080'>Home</a>"

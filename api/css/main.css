@@ -13,7 +13,7 @@ margin-top: 15px;
 
 
   padding: 3px;
-  background: #97CAF2;
+  background: #1abc9c;
   border-radius: 2px;
   transition: all 0.3s ease-out;
 
@@ -48,6 +48,9 @@ width: 500px;
 margin: 0 auto;
 }
 
+.blue{
+color: #2980b9;
+}
 
 
 
