@@ -104,11 +104,11 @@ class Ticker(object):
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
 
-
+#This class inherits from Ticker
 class DisplayHeadlines(Ticker):
     def __init__(self):
         Ticker.__init__(self)
-
+#POLY at work here. Over riding the method display and adding all the functionality to it
     def display(self):
         self.final = self.url + self.ticker
         self.request = urllib2.Request(self.final)
