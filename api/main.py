@@ -13,29 +13,23 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-        if self.request.GET:
-            url.ticker = self.request.GET["ticker"]
-            '''
+        if  self.request.GET and self.request.GET["ticker"] == "":
 
 
-            request = urllib2.Request(url.return_url())
-            opener = urllib2.build_opener()
-            result = opener.open(request)
-            xmldoc = minidom.parse(result)
-            print xmldoc
-            print url.return_url()
-            '''
-
-
-
-            self.response.write(page.print_open())
-            self.response.write(url.display())
-            #self.response.write(url.display())
-            #self.response.write(xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "<br />" + xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue )
-            #self.response.write(url.return_url())
+            self.response.write(page.print_full_open())
+            self.response.write(page.input)
+            self.response.write("Must fill in this field")
             self.response.write(page.print_close())
+        elif self.request.GET and self.request.GET["ticker"]:
+            url.ticker = self.request.GET["ticker"]
+            self.response.write(page.print_results_open())
+            self.response.write(url.display())
+            self.response.write(page.print_close())
+
+
+
         else:
-            self.response.write(page.print_open())
+            self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write(page.print_close())
 
@@ -96,9 +90,14 @@ class Page(object):
 
 
 
-    def print_open(self):
+    def print_full_open(self):
 
          self.open = self.head + self.body + self.main
+         return self.open
+
+    def print_results_open(self):
+
+         self.open = self.head + self.body
          return self.open
 
     def print_close(self):
@@ -156,7 +155,7 @@ class DisplayHeadlines(Ticker):
         self.header_3 = "<h1>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h1>"
         self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 
-        return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3
+        return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a href='http://localhost:12080'>Home</a>"
 
 
 
