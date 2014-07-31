@@ -23,6 +23,7 @@ class MainHandler(webapp2.RequestHandler):
         elif self.request.GET and self.request.GET["ticker"]:
             url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_results_open())
+            self.response.write("<h1>Top 3 results for " + url.ticker + "</h1>")
             self.response.write(url.display())
             self.response.write(page.print_close())
 
