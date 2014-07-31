@@ -72,7 +72,8 @@ class Page(object):
         self.ul_close = "</ul>"
         self.container_open = "<div class='cont'>"
         self.container_close = "</div>"
-
+        self.main_container_open = "<div class='main_cont'>"
+        self.main_container_close = "</div>"
         self.input = '''
         <form method="GET" action="">
         <label>Ticker: </label><input type="text" name="ticker" />
@@ -92,7 +93,7 @@ class Page(object):
 
     def print_full_open(self):
 
-         self.open = self.head + self.body + self.container_open + self.main
+         self.open = self.head + self.body + self.main_container_open + self.container_open + self.main
          return self.open
 
     def print_results_open(self):
@@ -101,7 +102,7 @@ class Page(object):
          return self.open
 
     def print_close(self):
-        self.close = self.container_close + self.html_close
+        self.close = self.container_close + self.main_container_close + self.html_close
         return self.close
 
 

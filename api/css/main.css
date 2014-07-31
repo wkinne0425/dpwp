@@ -37,13 +37,15 @@ ul{
 margin-left: 125px;
 }
 
-
+.main_cont{
+width: 1550px
+}
 
 .cont{
 
 
-width: 800px;
-padding-left: auto;
+width: 500px;
+margin: 0 auto;
 }
 
 
