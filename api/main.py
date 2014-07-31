@@ -10,12 +10,7 @@ class MainHandler(webapp2.RequestHandler):
         page = Page()
         url = DisplayHeadlines()
 
-
-
-
         if  self.request.GET and self.request.GET["ticker"] == "":
-
-
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write("Must fill in this field")
@@ -26,25 +21,10 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
             self.response.write(url.display())
             self.response.write(page.print_close())
-
-
-
         else:
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write(page.print_close())
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -107,7 +87,7 @@ class Page(object):
         return self.close
 
 
-#This class creates and displays all the info
+#This is the Abstract Class
 class Ticker(object):
     def __init__(self):
         self.url = "http://finance.yahoo.com/rss/headline?s="
@@ -159,31 +139,6 @@ class DisplayHeadlines(Ticker):
         self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 
         return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a class='home' href='http://localhost:12080'>Home</a>"
-
-
-
-
-
-
-
-'''
-    @property
-    def ticker(self):
-        pass
-    #Sets all the data and also loops the array
-    @ticker.setter
-    def ticker(self):
-        pass
-  '''
-
-
-
-
-
-
-
-
-
 
 
 
