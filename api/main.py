@@ -15,13 +15,24 @@ class MainHandler(webapp2.RequestHandler):
 
         if self.request.GET:
             url.ticker = self.request.GET["ticker"]
+            '''
+
+
             request = urllib2.Request(url.return_url())
             opener = urllib2.build_opener()
             result = opener.open(request)
             xmldoc = minidom.parse(result)
+            print xmldoc
+            print url.return_url()
+            '''
 
-            self.response.write(xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "<br />" + xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue )
 
+
+            self.response.write(page.print_open())
+            self.response.write(url.display())
+            #self.response.write(url.display())
+            #self.response.write(xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "<br />" + xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue )
+            #self.response.write(url.return_url())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_open())
@@ -61,7 +72,8 @@ class Page(object):
 
         '''
 
-        self.ul_open = "<ul>"
+        self.main = "<h1>Get your finance headlines</h1>" \
+                    "<h3>Please use the field below to enter you ticker</h3>"
         self.ul_close = "</ul>"
         self.container_open = "<div class='cont'>"
         self.container_close = "</div>"
@@ -85,7 +97,7 @@ class Page(object):
 
     def print_open(self):
 
-         self.open = self.head + self.body
+         self.open = self.head + self.body + self.main
          return self.open
 
     def print_close(self):
@@ -97,21 +109,55 @@ class Ticker(object):
     def __init__(self):
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
-        self.final = ""
 
 
 
+    '''
     def return_url(self):
 
         self.final = self.url + self.ticker
 
         return self.final
 
+'''
+    def display(self):
+        #return self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue
+        self.final = self.url + self.ticker
+        self.request = urllib2.Request(self.final)
+        self.opener = urllib2.build_opener()
+        self.result = self.opener.open(self.request)
+        self.xmldoc = minidom.parse(self.result)
+        #print self.final
+
+        return self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue
+
+    def return_url(self):
+        self.final = self.url + self.ticker
+        return self.final
 
 
 class DisplayHeadlines(Ticker):
     def __init__(self):
         Ticker.__init__(self)
+
+    def display(self):
+        self.final = self.url + self.ticker
+        self.request = urllib2.Request(self.final)
+        self.opener = urllib2.build_opener()
+        self.result = self.opener.open(self.request)
+        self.xmldoc = minidom.parse(self.result)
+        self.header_1 = "<h1>" + self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "</h1>"
+        self.link_1 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+
+        self.header_2 = "<h1>" + self.xmldoc.getElementsByTagName('title')[3].firstChild.nodeValue + "</h1>"
+        self.link_2 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[3].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+
+        self.header_3 = "<h1>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h1>"
+        self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+
+        return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3
+
+
 
 
 
