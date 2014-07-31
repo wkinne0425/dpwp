@@ -10,6 +10,8 @@ class MainHandler(webapp2.RequestHandler):
         page = Page()
         url = DisplayHeadlines()
 
+        #if statement that validates the input field is not emplty and displays proper info according to ticker
+
         if  self.request.GET and self.request.GET["ticker"] == "":
             self.response.write(page.print_full_open())
             self.response.write(page.input)
@@ -90,33 +92,17 @@ class Page(object):
 #This is the Abstract Class
 class Ticker(object):
     def __init__(self):
+#Attributes that hold data for proper url
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
-
-
-
-    '''
-    def return_url(self):
-
-        self.final = self.url + self.ticker
-
-        return self.final
-
-'''
+#Method that connects url to one piece and also parse xml
     def display(self):
-        #return self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue
+
         self.final = self.url + self.ticker
         self.request = urllib2.Request(self.final)
         self.opener = urllib2.build_opener()
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
-        #print self.final
-
-        return self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue
-
-    def return_url(self):
-        self.final = self.url + self.ticker
-        return self.final
 
 
 class DisplayHeadlines(Ticker):
