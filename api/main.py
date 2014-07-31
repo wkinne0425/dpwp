@@ -51,7 +51,8 @@ class Page(object):
         '''
 
         self.main = "<h1>Get your finance headlines</h1>" \
-                    "<h3>Please use the field below to enter you ticker</h3>"
+                    "<h3>Please use the field below to enter you ticker</h3>" \
+                    "<p>&quot;You must enter a correct ticker or an error will appear&quot;</p>"
         self.ul_close = "</ul>"
         self.container_open = "<div class='cont'>"
         self.container_close = "</div>"
