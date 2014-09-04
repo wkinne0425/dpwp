@@ -26,3 +26,11 @@ while noun_1 == noun_2:
 number_1 = raw_input("Please Enter a Number: ")
 number_2 = raw_input("Please Enter a Number: ")
 number_3 = raw_input("Please Enter a Number: ")
+
+
+#Validating that each number is different
+while number_1 == number_2 or number_2 == number_3 or number_3 == 1:
+    print "All numbers must be different"
+    number_1 = raw_input("Please Enter a Number: ")
+    number_2 = raw_input("Please Enter a Number: ")
+    number_3 = raw_input("Please Enter a Number: ")
