@@ -18,8 +18,8 @@ noun_2 = raw_input("Please Enter Another Noun: ")
 
 while noun_1 == noun_2:
     print "Nouns cannot be identical"
-    noun_1 = raw_input("Please Enter A Noun: ")
-    noun_2 = raw_input("Please Enter Another Noun: ")
+    animal_1 = raw_input("Please Enter An Animal: ")
+    animal_2 = raw_input("Please Enter Another Animal: ")
 
 
 #Retreiving numbers
@@ -38,5 +38,24 @@ while number_1 == number_2 or number_2 == number_3 or number_3 == 1:
 #Empty array to be filled my the addItems function
 madlib_items = []
 
-def addItems(a1,a2,noun1,noun2, n1, n2, n3):
+def addItems(a1,a2,animal_1, animal_2, n1, n2, n3):
+
     madlib_items.append(a1)
+    madlib_items.append(a2)
+    madlib_items.append(animal_1)
+    madlib_items.append(animal_2)
+    madlib_items.append(n1)
+    madlib_items.append(n2)
+    madlib_items.append(n3)
+
+
+    print "This week the pound took in " + madlib_items[4] + " " + madlib_items[2] + "'s and " + madlib_items[5] + " " + madlib_items[3] + "'s. Out of all of those animals " + madlib_items[6] + " of them found owners already. All of the " + madlib_items[2] + "'s were " + madlib_items[0] + "and all of the " + madlib_items[3] + "'s were " + madlib_items[1]
+
+
+
+
+
+
+
+
+addItems(adj_1, adj_2, noun_1, noun_2, number_1, number_2, number_3)
