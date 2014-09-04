@@ -38,6 +38,8 @@ while number_1 == number_2 or number_2 == number_3 or number_3 == 1:
 #Empty array to be filled my the addItems function
 madlib_items = []
 
+
+#This function will append all items entered into an array and print out the madlib
 def addItems(a1,a2,animal_1, animal_2, n1, n2, n3):
 
     madlib_items.append(a1)
@@ -57,5 +59,5 @@ def addItems(a1,a2,animal_1, animal_2, n1, n2, n3):
 
 
 
-
+#This runs the function
 addItems(adj_1, adj_2, noun_1, noun_2, number_1, number_2, number_3)
