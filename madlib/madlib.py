@@ -38,3 +38,5 @@ while number_1 == number_2 or number_2 == number_3 or number_3 == 1:
 #Empty array to be filled my the addItems function
 madlib_items = []
 
+def addItems(a1,a2,noun1,noun2, n1, n2, n3):
+    madlib_items.append(a1)
