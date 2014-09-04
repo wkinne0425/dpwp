@@ -34,3 +34,7 @@ while number_1 == number_2 or number_2 == number_3 or number_3 == 1:
     number_1 = raw_input("Please Enter a Number: ")
     number_2 = raw_input("Please Enter a Number: ")
     number_3 = raw_input("Please Enter a Number: ")
+
+#Empty array to be filled my the addItems function
+madlib_items = []
+
