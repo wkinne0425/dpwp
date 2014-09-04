@@ -13,8 +13,8 @@ while adj_1 == adj_2:
 
 
 #Retreiving the variables from the user for the Nouns
-noun_1 = raw_input("Please Enter A Noun: ")
-noun_2 = raw_input("Please Enter Another Noun: ")
+noun_1 = raw_input("Please Enter A Animal: ")
+noun_2 = raw_input("Please Enter Another Animal: ")
 
 while noun_1 == noun_2:
     print "Nouns cannot be identical"
@@ -49,7 +49,7 @@ def addItems(a1,a2,animal_1, animal_2, n1, n2, n3):
     madlib_items.append(n3)
 
 
-    print "This week the pound took in " + madlib_items[4] + " " + madlib_items[2] + "'s and " + madlib_items[5] + " " + madlib_items[3] + "'s. Out of all of those animals " + madlib_items[6] + " of them found owners already. All of the " + madlib_items[2] + "'s were " + madlib_items[0] + "and all of the " + madlib_items[3] + "'s were " + madlib_items[1]
+    print "This week the pound took in " + madlib_items[4] + " " + madlib_items[2] + "'s and " + madlib_items[5] + " " + madlib_items[3] + "'s. Out of all of those animals " + madlib_items[6] + " of them found owners already. All of the " + madlib_items[2] + "'s were " + madlib_items[0] + " and all of the " + madlib_items[3] + "'s were " + madlib_items[1]
 
 
 
