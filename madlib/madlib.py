@@ -16,7 +16,10 @@ while adj_1 == adj_2:
 noun_1 = raw_input("Please Enter A Noun: ")
 noun_2 = raw_input("Please Enter Another Noun: ")
 
-
+while noun_1 == noun_2:
+    print "Nouns cannot be identical"
+    noun_1 = raw_input("Please Enter A Noun: ")
+    noun_2 = raw_input("Please Enter Another Noun: ")
 
 
 #Retreiving numbers
