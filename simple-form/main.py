@@ -53,7 +53,7 @@ class MainHandler(webapp2.RequestHandler):
         </html>
 
                 '''
-def calc():
+    def calc():
 
             #begining attributes
             interest = 0
@@ -73,7 +73,12 @@ def calc():
             else:
                 interest = 8
 
-
+              #self.response.write(interest)
+        #starts finding the total amount of interest by multiplying loan by interest then divide by 100
+            total_interest = (loan_number * interest)
+            number = int(total_interest)
+            final_interest = number / 100.0
+            final_interest_str = str(final_interest)
 
 
 self.response.write(head + body + footer)
