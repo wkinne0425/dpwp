@@ -2,7 +2,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-    head = '''
+     head = '''
         <!doctype html>
 
         <html lang="en">
@@ -43,6 +43,13 @@ class MainHandler(webapp2.RequestHandler):
                <input class="button" type="submit" value="Submit" />
                </form>
                '''
+
+    footer = '''
+        <footer></footer>
+        </body>
+        </html>
+
+                '''
 
 
 
