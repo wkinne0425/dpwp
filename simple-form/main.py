@@ -27,6 +27,15 @@ class MainHandler(webapp2.RequestHandler):
                <label>Email: </label><input type="text" name="email" />
                <label>Loan Amount: </label><input type="text" name="loan" />
 
+                <div id="buttons">
+               <h3>Choose your credit:</h3>
+
+               <input type="radio" name="radio_button" value="excellent">Excellent
+               <input type="radio" name="radio_button" value="good">Good
+               <input type="radio" name="radio_button" value="fair">Fair
+               </div>
+               </div>
+
 
 
 app = webapp2.WSGIApplication([
