@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
         body = '''
 
         <body>
-            <h1>Calculate Your Auto Loan
+            <h1>Calculate Your Auto Loan</h1>
                <form method="GET" action="">
                <label>Car: </label><input type="text" name="car" />
                <label>Year: </label><input type="text" name="year" />
@@ -32,9 +32,9 @@ class MainHandler(webapp2.RequestHandler):
                <div id="buttons">
                <h3>Choose your credit:</h3>
 
-               <input type="radio" name="radio_button" value="excellent">Excellent
-               <input type="radio" name="radio_button" value="good">Good
-               <input type="radio" name="radio_button" value="fair">Fair
+               <label>Excellent </label><input type="radio" name="radio_button" value="excellent">
+               <label>Good</label><input type="radio" name="radio_button" value="good">
+               <label>Fair</label><input type="radio" name="radio_button" value="fair">
                </div>
 
 
