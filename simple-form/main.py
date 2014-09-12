@@ -25,7 +25,7 @@ class MainHandler(webapp2.RequestHandler):
         <body>
             <h1>Calculate Your Auto Loan
                <form method="GET" action="">
-               <label>Car: </label><input type="text" name="name" />
+               <label>Car: </label><input type="text" name="car" />
                <label>Year: </label><input type="text" name="year" />
                <label>Cost of Car: </label><input type="text" name="loan" />
 
@@ -58,9 +58,10 @@ class MainHandler(webapp2.RequestHandler):
 
             #begining attributes
             interest = 0
+            year = self.request.GET['year']
             loan_amount = self.request.GET['loan']
             loan_number = int(loan_amount)
-            name = self.request.GET['name']
+            car = self.request.GET['car']
             #sets interest rate according to selections
             if self.request.GET['radio_button'] == 'excellent':
                 interest = 3
@@ -98,7 +99,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-            self.response.write("Ok " + name + " here are your loan terms: <br />" )
+            self.response.write("here are your loan terms for your " + year + car + "<br />" )
             self.response.write("Loan Amount: " + "$" + loan_amount + "<br />")
             self.response.write("Interest Amount: " + "$" + final_interest_str + "<br />")
             self.response.write("Total Loan: " + "$" + total_loan_str + "<br />")
