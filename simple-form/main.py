@@ -53,8 +53,17 @@ class MainHandler(webapp2.RequestHandler):
         </html>
 
                 '''
+def calc():
 
-        self.response.write(head + body + footer)
+            #begining attributes
+            interest = 0
+            loan_amount = self.request.GET['loan']
+            loan_number = int(loan_amount)
+            name = self.request.GET['name']
+
+
+
+self.response.write(head + body + footer)
 
 
 
