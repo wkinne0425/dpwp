@@ -36,6 +36,14 @@ class MainHandler(webapp2.RequestHandler):
                </div>
                </div>
 
+               <h3> Choose your terms: </h3>
+               <select name="length"><option value="15">15yr</option><option value="30">30yr</option></select>
+
+
+               <input class="button" type="submit" value="Submit" />
+               </form>
+               '''
+
 
 
 app = webapp2.WSGIApplication([
