@@ -80,6 +80,19 @@ class MainHandler(webapp2.RequestHandler):
             final_interest = number / 100.0
             final_interest_str = str(final_interest)
 
+         #finds total loan amount after interest
+            total_loan = loan_number + final_interest
+            total_loan_str = str(total_loan)
+
+
+            term = self.request.GET['length']
+            term_number = int(term)
+
+            monthly = total_loan / term_number / 12.0
+            monthly_str = str(monthly)
+
+            #self.response.write(monthly)
+
 
 self.response.write(head + body + footer)
 
