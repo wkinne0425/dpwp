@@ -23,11 +23,11 @@ class MainHandler(webapp2.RequestHandler):
         body = '''
 
         <body>
-            <h1>Calculate your Auto Loan</h1>
+            <h1>Calculate Your Auto Loan
                <form method="GET" action="">
                <label>Car: </label><input type="text" name="name" />
-               <label>Year: </label><input type="text" name="email" />
-               <label>Cost of car: </label><input type="text" name="loan" />
+               <label>Year: </label><input type="text" name="year" />
+               <label>Cost of Car: </label><input type="text" name="loan" />
 
                <div id="buttons">
                <h3>Choose your credit:</h3>
@@ -53,14 +53,14 @@ class MainHandler(webapp2.RequestHandler):
         </html>
 
                 '''
-    def calc():
+#function that does all the magic
+        def calc():
 
             #begining attributes
             interest = 0
             loan_amount = self.request.GET['loan']
             loan_number = int(loan_amount)
             name = self.request.GET['name']
-
             #sets interest rate according to selections
             if self.request.GET['radio_button'] == 'excellent':
                 interest = 3
@@ -72,15 +72,14 @@ class MainHandler(webapp2.RequestHandler):
 
             else:
                 interest = 8
-
-              #self.response.write(interest)
+                #self.response.write(interest)
         #starts finding the total amount of interest by multiplying loan by interest then divide by 100
             total_interest = (loan_number * interest)
             number = int(total_interest)
             final_interest = number / 100.0
             final_interest_str = str(final_interest)
 
-         #finds total loan amount after interest
+            #finds total loan amount after interest
             total_loan = loan_number + final_interest
             total_loan_str = str(total_loan)
 
@@ -93,14 +92,28 @@ class MainHandler(webapp2.RequestHandler):
 
             #self.response.write(monthly)
 
-         self.response.write("Ok " + name + " here are your loan terms: <br />" )
+
+
+
+
+
+
+            self.response.write("Ok " + name + " here are your loan terms: <br />" )
             self.response.write("Loan Amount: " + "$" + loan_amount + "<br />")
             self.response.write("Interest Amount: " + "$" + final_interest_str + "<br />")
             self.response.write("Total Loan: " + "$" + total_loan_str + "<br />")
             self.response.write("Monthy Payments: " + "$" + monthly_str)
 
 
-self.response.write(head + body + footer)
+
+
+
+
+
+        if self.request.GET:
+            calc()
+        else:
+            self.response.write(head + body + footer)
 
 
 
