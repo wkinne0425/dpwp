@@ -23,11 +23,11 @@ class MainHandler(webapp2.RequestHandler):
         body = '''
 
         <body>
-
+            <h1>Calculate your Auto Loan</h1>
                <form method="GET" action="">
-               <label>Name: </label><input type="text" name="name" />
-               <label>Email: </label><input type="text" name="email" />
-               <label>Loan Amount: </label><input type="text" name="loan" />
+               <label>Car: </label><input type="text" name="name" />
+               <label>Year: </label><input type="text" name="email" />
+               <label>Cost of car: </label><input type="text" name="loan" />
 
                <div id="buttons">
                <h3>Choose your credit:</h3>
