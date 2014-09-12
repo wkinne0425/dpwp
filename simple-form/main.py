@@ -22,6 +22,10 @@ class MainHandler(webapp2.RequestHandler):
     body = '''
 
         <body>
+        <form method="GET" action="">
+               <label>Name: </label><input type="text" name="name" />
+               <label>Email: </label><input type="text" name="email" />
+               <label>Loan Amount: </label><input type="text" name="loan" />
 
 
 
