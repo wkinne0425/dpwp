@@ -34,6 +34,11 @@ class MainHandler(webapp2.RequestHandler):
         </html>
         '''
 
+    def print_all(self):
+
+         self.all = self.head + self.body + self.links + self.close
+         return self.all
+
  class Golf(object):
     def __init__(self):
             self.round1 = 0
