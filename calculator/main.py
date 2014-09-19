@@ -4,7 +4,40 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
 
     page = Page()
-    
+    w = Golf()
+        w.round1 = 80
+        w.round2 = 70
+        w.round3 = 85
+        w.round4 = 90
+        w.round5 = 100
+
+        m = Golf()
+        m.round1 = 80
+        m.round2 = 77
+        m.round3 = 88
+        m.round4 = 98
+        m.round5 = 65
+
+        p = Golf()
+        p.round1 = 76
+        p.round2 = 70
+        p.round3 = 108
+        p.round4 = 95
+        p.round5 = 68
+
+        s = Golf()
+        s.round1 = 89
+        s.round2 = 72
+        s.round3 = 99
+        s.round4 = 95
+        s.round5 = 100
+
+        a = Golf()
+        a.round1 = 71
+        a.round2 = 72
+        a.round3 = 66
+        a.round4 = 95
+        a.round5 = 80
 
 
  class Page(object):
