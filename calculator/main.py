@@ -22,6 +22,18 @@ class MainHandler(webapp2.RequestHandler):
 
         '''
 
+        self.close = '''
+
+        </body>
+        </html>
+        '''
+
+        self.close = '''
+
+        </body>
+        </html>
+        '''
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
