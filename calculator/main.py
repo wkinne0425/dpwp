@@ -113,7 +113,7 @@ class Golf(object):
 
 
 
-
+#first getter to grab the scoring average
     @property
     def scoring_average(self):
         return self.__scoring_average
