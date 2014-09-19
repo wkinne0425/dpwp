@@ -34,6 +34,15 @@ class MainHandler(webapp2.RequestHandler):
         </html>
         '''
 
+ class Golf(object):
+    def __init__(self):
+            self.round1 = 0
+            self.round2 = 0
+            self.round3 = 0
+            self.round4 = 0
+            self.round5 = 0
+            self.__scoring_average = 0
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
