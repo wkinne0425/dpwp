@@ -41,7 +41,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-
+#Conditional that knows when a link is clicked and what to display
         if (self.request.GET and self.request.GET['golfer'] == 'walker'):
             self.response.write(page.head + page.body + str(w.calc_score()) + page.close)
         elif (self.request.GET and self.request.GET['golfer'] == 'marisa'):
@@ -59,7 +59,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-
+#HTML class that handles all of the viusal aspects
 class Page(object):
     def __init__(self):
         self.head = '''
@@ -101,7 +101,7 @@ class Page(object):
 
 
 
-
+#Class that takes all the rounds in and runs the calculate function to get the average
 class Golf(object):
     def __init__(self):
             self.round1 = 0
@@ -118,12 +118,12 @@ class Golf(object):
     def scoring_average(self):
         return self.__scoring_average
 
-
+#first setter to change the scoring average if the user wants
     @scoring_average.setter
     def scoring_average(self, new_scoring_average):
         self.__scoring_average = new_scoring_average
 
-
+#funct to calculate the average of the 5 rounds of golf
     def calc_score(self):
         self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
         return self.__scoring_average
