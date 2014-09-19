@@ -68,6 +68,7 @@ class Page(object):
             <head>
             <title></title>
             <link rel="stylesheet" href="css/main.css" />
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
             </head>
             <body>
             <h1>Lets learn how good these players really are!</h1>
