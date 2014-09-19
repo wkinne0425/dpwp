@@ -3,6 +3,10 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
 
+    page = Page()
+    
+
+
  class Page(object):
     def __init__(self):
         self.head = '''
