@@ -87,11 +87,12 @@ class Page(object):
         '''
 
         self.links = '''
-        <a href="?golfer=marisa">Marisa</a>
-        <a href="?golfer=walker">Walker</a>
-        <a href="?golfer=pinky">Pinky</a>
-        <a href="?golfer=alan">Alan</a>
-        <a href="?golfer=scott">Scott</a>
+        <a href="?golfer=marisa">Marisa<img src="img/golf.jpg" /></a>
+
+        <a href="?golfer=walker">Walker<img src="img/golf.jpg" /></a>
+        <a href="?golfer=pinky">Pinky<img src="img/golf.jpg" /></a>
+        <a href="?golfer=alan">Alan<img src="img/golf.jpg" /></a>
+        <a href="?golfer=scott">Scott<img src="img/golf.jpg" /></a>
         '''
     def print_all(self):
 
