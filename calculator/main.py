@@ -44,13 +44,17 @@ class MainHandler(webapp2.RequestHandler):
             self.__scoring_average = 0
 
 
- @property
+    @property
     def scoring_average(self):
         return self.__scoring_average
 
- @scoring_average.setter
+    @scoring_average.setter
     def scoring_average(self, new_scoring_average):
         self.__scoring_average = new_scoring_average
+
+     def calc_score(self):
+        self.__scoring_average = (self.round1 + self.round2 + self.round3 + self.round4 + self.round5)/5
+        return self.__scoring_average
 
 
 app = webapp2.WSGIApplication([
