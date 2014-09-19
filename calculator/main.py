@@ -16,7 +16,11 @@ class MainHandler(webapp2.RequestHandler):
             <h1>Lets learn how good these players really are!</h1>
             <h3>Click below to reveal each players scoring average for 5 rounds of golf</h3>
         '''
+        self.body = '''
 
+
+
+        '''
 
 
 app = webapp2.WSGIApplication([
