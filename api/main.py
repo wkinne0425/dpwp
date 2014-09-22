@@ -44,8 +44,23 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         </html>
 
+
         '''
 
+    def print_full_open(self):
+
+         self.open = self.head + self.body + self.main_container_open + self.container_open + self.main
+         return self.open
+
+    def print_results_open(self):
+
+         self.open = self.head + self.body
+         return self.open
+
+    def print_close(self):
+        self.close = self.container_close + self.main_container_close + self.html_close
+        return self.close
+    
 
 
 app = webapp2.WSGIApplication([
