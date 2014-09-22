@@ -68,6 +68,15 @@ class Ticker(object):
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
 
+    #Method that connects url to one piece and also parse xml
+    def display(self):
+
+        self.final = self.url + self.ticker
+        self.request = urllib2.Request(self.final)
+        self.opener = urllib2.build_opener()
+        self.result = self.opener.open(self.request)
+        self.xmldoc = minidom.parse(self.result)
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
