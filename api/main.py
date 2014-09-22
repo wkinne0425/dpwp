@@ -7,7 +7,9 @@ from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        
+        page = Page()
+        url = DisplayHeadlines()
+
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
         if  self.request.GET and self.request.GET["ticker"] == "":
