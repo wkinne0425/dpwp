@@ -39,6 +39,14 @@ class MainHandler(webapp2.RequestHandler):
                </form>
         '''
 
+        self.html_close = '''
+
+        </body>
+        </html>
+
+        '''
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
