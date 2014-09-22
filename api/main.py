@@ -60,7 +60,13 @@ class MainHandler(webapp2.RequestHandler):
     def print_close(self):
         self.close = self.container_close + self.main_container_close + self.html_close
         return self.close
-    
+
+
+class Ticker(object):
+    def __init__(self):
+#Attributes that hold data for proper url
+        self.url = "http://finance.yahoo.com/rss/headline?s="
+        self.ticker = ""
 
 
 app = webapp2.WSGIApplication([
