@@ -77,6 +77,10 @@ class Ticker(object):
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
 
+class DisplayHeadlines(Ticker):
+    def __init__(self):
+        Ticker.__init__(self)
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
