@@ -81,6 +81,13 @@ class DisplayHeadlines(Ticker):
     def __init__(self):
         Ticker.__init__(self)
 
+    def display(self):
+        self.final = self.url + self.ticker
+        self.request = urllib2.Request(self.final)
+        self.opener = urllib2.build_opener()
+        self.result = self.opener.open(self.request)
+        self.xmldoc = minidom.parse(self.result)
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
