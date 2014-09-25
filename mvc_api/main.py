@@ -15,16 +15,16 @@ class MainHandler(webapp2.RequestHandler):
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
-        if  self.request.GET and self.request.GET["ticker"] == "":
+        if  sm.zip == "":
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write("Must fill in this field")
             self.response.write(page.print_close())
-        elif self.request.GET and self.request.GET["ticker"]:
+        elif sm.zip:
             url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_results_open())
             self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
-            self.response.write(url.display())
+            self.response.write(sm.callApi())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_full_open())
@@ -45,6 +45,17 @@ class StockModel(object):
         self.opener = urllib2.build_opener()
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
+
+        self.header_1 = "<h3>" + self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "</h3>"
+        self.link_1 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+#displays info from the second title and link
+        self.header_2 = "<h3>" + self.xmldoc.getElementsByTagName('title')[3].firstChild.nodeValue + "</h3>"
+        self.link_2 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[3].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+#displays info from the third title and link
+        self.header_3 = "<h3>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h3>"
+        self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
+#returns all information for display
+        return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a class='home' href='http://localhost:12080'>Home</a>"
 
 
 
