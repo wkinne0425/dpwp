@@ -10,21 +10,21 @@ class MainHandler(webapp2.RequestHandler):
         page = Page()
         url = DisplayHeadlines()
         sm = StockModel()
-        sm.zip = self.request.GET and self.request.GET["ticker"]
+        sm.t = self.request.GET["ticker"]
 
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
-        if  sm.zip == "":
+        if  sm.t == "":
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write("Must fill in this field")
             self.response.write(page.print_close())
-        elif sm.zip:
-            url.ticker = self.request.GET["ticker"]
+        elif sm.t:
+
             self.response.write(page.print_results_open())
             self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
-            self.response.write(sm.callApi())
+            self.response.write("hello")
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_full_open())
@@ -32,40 +32,7 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(page.print_close())
 
 
-class StockModel(object):
-    """ This fetches and sorts through api data"""
 
-    def __init__(self):
-        self.__url = "http://finance.yahoo.com/rss/headline?s="
-        self.__ticker = ''
-
-    def callApi(self):
-        self.final = self.__url + self.__ticker
-        self.request = urllib2.Request(self.final)
-        self.opener = urllib2.build_opener()
-        self.result = self.opener.open(self.request)
-        self.xmldoc = minidom.parse(self.result)
-
-        self.header_1 = "<h3>" + self.xmldoc.getElementsByTagName('title')[2].firstChild.nodeValue + "</h3>"
-        self.link_1 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[2].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
-#displays info from the second title and link
-        self.header_2 = "<h3>" + self.xmldoc.getElementsByTagName('title')[3].firstChild.nodeValue + "</h3>"
-        self.link_2 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[3].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
-#displays info from the third title and link
-        self.header_3 = "<h3>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h3>"
-        self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
-#returns all information for display
-        return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a class='home' href='http://localhost:12080'>Home</a>"
-
-
-
-    @property
-    def ticker(self):
-        pass
-
-    @ticker.setter
-    def ticker(self, t):
-        self.__ticker = t
 
 
 
@@ -132,7 +99,7 @@ class Page(object):
 
 
 #This is the Abstract Class
-class Ticker(object):
+class StockModel(object):
     def __init__(self):
 #Attributes that hold data for proper url
         self.url = "http://finance.yahoo.com/rss/headline?s="
@@ -147,9 +114,9 @@ class Ticker(object):
         self.xmldoc = minidom.parse(self.result)
 
 #This class inherits from Ticker
-class DisplayHeadlines(Ticker):
+class DisplayHeadlines(StockModel):
     def __init__(self):
-        Ticker.__init__(self)
+        StockModel.__init__(self)
 #POLY at work here. Over riding the method display and adding all the functionality to it
     def display(self):
         self.final = self.url + self.ticker
