@@ -1,4 +1,3 @@
-
 import webapp2
 import urllib2
 from xml.dom import minidom
@@ -8,23 +7,20 @@ from xml.dom import minidom
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = Page()
-        sm = StockModel()
-        sc = StockController()
-        sm.ticker = self.request.GET["ticker"]
-
+        url = DisplayHeadlines()
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
-        if  sm.ticker == "":
+        if  self.request.GET and self.request.GET["ticker"] == "":
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write("Must fill in this field")
             self.response.write(page.print_close())
         elif self.request.GET and self.request.GET["ticker"]:
-
+            url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_results_open())
-            self.response.write("<h1 class='blue'>Top 3 results for " + "</h1>")
-            self.response.write(sm.display())
+            self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
+            self.response.write(url.display())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_full_open())
@@ -34,12 +30,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-
-
-
-
-
-  #This creates all the page attributes for the html
+#This creates all the page attributes for the html
 class Page(object):
     def __init__(self):
         self.head = '''
@@ -105,17 +96,6 @@ class StockModel(object):
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
 #Method that connects url to one piece and also parse xml
-    def display(self):
-
-
-
-        self.final = self.url + self.ticker
-        self.request = urllib2.Request(self.final)
-        self.opener = urllib2.build_opener()
-        self.result = self.opener.open(self.request)
-        self.xmldoc = minidom.parse(self.result)
-
-
 
 
 
@@ -141,6 +121,7 @@ class StockController(StockModel):
         self.header_3 = "<h3>" + self.xmldoc.getElementsByTagName('title')[4].firstChild.nodeValue + "</h3>"
         self.link_3 = "<a href=" +  self.xmldoc.getElementsByTagName('link')[4].firstChild.nodeValue + ">" + "Link To Story" + "</a>"
 #returns all information for display
+        
         return self.header_1 + self.link_1 + self.header_2 + self.link_2 + self.header_3 + self.link_3 + "<a class='home' href='http://localhost:12080'>Home</a>"
 
 
