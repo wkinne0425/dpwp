@@ -9,6 +9,9 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = Page()
         url = DisplayHeadlines()
+        sm = StockModel()
+        sm.zip = self.request.GET and self.request.GET["ticker"]
+
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
@@ -29,15 +32,36 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(page.print_close())
 
 
+class StockModel(object):
+    """ This fetches and sorts through api data"""
+
+    def __init__(self):
+        self.__url = "http://finance.yahoo.com/rss/headline?s="
+        self.__ticker = ''
+
+    def callApi(self):
+        self.final = self.__url + self.__ticker
+        self.request = urllib2.Request(self.final)
+        self.opener = urllib2.build_opener()
+        self.result = self.opener.open(self.request)
+        self.xmldoc = minidom.parse(self.result)
 
 
-class StockData(object):
-    """
-    This data object is for holding data fetched my data
-    """
+
+    @property
+    def ticker(self):
+        pass
+
+    @ticker.setter
+    def ticker(self, t):
+        self.__ticker = t
 
 
-#This creates all the page attributes for the html
+
+
+
+
+  #This creates all the page attributes for the html
 class Page(object):
     def __init__(self):
         self.head = '''
