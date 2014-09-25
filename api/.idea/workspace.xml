@@ -26,11 +26,10 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2356021" vertical-offset="390" max-vertical-offset="1290">
-              <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.2552356" vertical-offset="90" max-vertical-offset="2160">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="61" />
               <folding>
                 <element signature="e#1#15#0" expanded="true" />
-                <element signature="e#1182#2752#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -52,9 +51,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="551" />
+    <option name="x" value="783" />
     <option name="y" value="22" />
-    <option name="width" value="975" />
+    <option name="width" value="743" />
     <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -237,14 +236,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="551" y="22" width="975" height="874" extended-state="0" />
+    <frame x="783" y="22" width="743" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15746972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -285,7 +284,6 @@
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -296,7 +294,6 @@
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -307,7 +304,6 @@
           <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -318,7 +314,6 @@
           <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -329,7 +324,6 @@
           <caret line="54" column="95" selection-start-line="54" selection-start-column="95" selection-end-line="54" selection-end-column="95" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -340,7 +334,6 @@
           <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -351,7 +344,6 @@
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -362,7 +354,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -373,7 +364,6 @@
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -384,7 +374,6 @@
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -395,18 +384,16 @@
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2356021" vertical-offset="390" max-vertical-offset="1290">
-          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.2552356" vertical-offset="90" max-vertical-offset="2160">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="61" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <element signature="e#1182#2752#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -8,23 +8,23 @@ from xml.dom import minidom
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = Page()
-        url = DisplayHeadlines()
         sm = StockModel()
-        sm.t = self.request.GET["ticker"]
+        sc = StockController()
+        sm.ticker = self.request.GET["ticker"]
 
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
-        if  sm.t == "":
+        if  sm.ticker == "":
             self.response.write(page.print_full_open())
             self.response.write(page.input)
             self.response.write("Must fill in this field")
             self.response.write(page.print_close())
-        elif sm.t:
+        elif self.request.GET and self.request.GET["ticker"]:
 
             self.response.write(page.print_results_open())
-            self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
-            self.response.write("hello")
+            self.response.write("<h1 class='blue'>Top 3 results for " + "</h1>")
+            self.response.write(sm.display())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_full_open())
@@ -107,14 +107,21 @@ class StockModel(object):
 #Method that connects url to one piece and also parse xml
     def display(self):
 
+
+
         self.final = self.url + self.ticker
         self.request = urllib2.Request(self.final)
         self.opener = urllib2.build_opener()
         self.result = self.opener.open(self.request)
         self.xmldoc = minidom.parse(self.result)
 
+
+
+
+
+
 #This class inherits from Ticker
-class DisplayHeadlines(StockModel):
+class StockController(StockModel):
     def __init__(self):
         StockModel.__init__(self)
 #POLY at work here. Over riding the method display and adding all the functionality to it
