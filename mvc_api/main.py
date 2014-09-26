@@ -95,7 +95,7 @@ class StockModel(object):
 #Attributes that hold data for proper url
         self.url = "http://finance.yahoo.com/rss/headline?s="
         self.ticker = ""
-#Method that connects url to one piece and also parse xml
+
 
 
 
@@ -104,7 +104,7 @@ class StockModel(object):
 class StockController(StockModel):
     def __init__(self):
         StockModel.__init__(self)
-#POLY at work here. Over riding the method display and adding all the functionality to it
+#This takes the url and ticker, adds them together and then parses the xml document
     def displayInfo(self):
         self.final = self.url + self.ticker
         self.request = urllib2.Request(self.final)

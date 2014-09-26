@@ -26,13 +26,11 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.057591625" vertical-offset="91" max-vertical-offset="855">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.42801046" vertical-offset="108" max-vertical-offset="900">
+              <caret line="106" column="83" selection-start-line="106" selection-start-column="83" selection-end-line="106" selection-end-column="83" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#131#1106#0" expanded="false" />
                 <element signature="e#1186#2756#0" expanded="false" />
-                <element signature="e#2814#2963#0" expanded="false" />
-                <element signature="e#3097#4582#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -288,13 +286,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057591625" vertical-offset="91" max-vertical-offset="855">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.42801046" vertical-offset="108" max-vertical-offset="900">
+          <caret line="106" column="83" selection-start-line="106" selection-start-column="83" selection-end-line="106" selection-end-column="83" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#131#1106#0" expanded="false" />
             <element signature="e#1186#2756#0" expanded="false" />
-            <element signature="e#2814#2963#0" expanded="false" />
-            <element signature="e#3097#4582#0" expanded="false" />
           </folding>
         </state>
       </provider>
