@@ -1,5 +1,27 @@
 /* cool link css */
 
 
+body{
+font-family: 'Rajdhani', sans-serif;
+}
 
+a{
+
+display: block;
+text-decoration: none;
+
+margin-top: 15px;
+
+
+  padding: 3px;
+  background: #1abc9c;
+  border-radius: 2px;
+  transition: all 0.3s ease-out;
+
+  /* Font styles */
+
+  font-weight: bold;
+  color: white;
+  width: 100px;
+}
 
