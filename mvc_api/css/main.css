@@ -39,13 +39,13 @@ margin-left: 125px;
 }
 
 .main_cont{
-width: 1550px
+max-width: 1550px
 }
 
 .cont{
 
 
-width: 500px;
+width: 35%;
 margin: 0 auto;
 }
 
