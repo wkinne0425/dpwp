@@ -6,8 +6,8 @@ from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        page = Page()
-        url = DisplayHeadlines()
+        page = StockView()
+        url = StockController()
 
         #if statement that validates the input field is not emplty and displays proper info according to ticker
 
@@ -20,7 +20,7 @@ class MainHandler(webapp2.RequestHandler):
             url.ticker = self.request.GET["ticker"]
             self.response.write(page.print_results_open())
             self.response.write("<h1 class='blue'>Top 3 results for " + url.ticker + "</h1>")
-            self.response.write(url.display())
+            self.response.write(url.displayInfo())
             self.response.write(page.print_close())
         else:
             self.response.write(page.print_full_open())
@@ -31,7 +31,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 #This creates all the page attributes for the html
-class Page(object):
+class StockView(object):
     def __init__(self):
         self.head = '''
         <!DOCTYPE>
@@ -105,7 +105,7 @@ class StockController(StockModel):
     def __init__(self):
         StockModel.__init__(self)
 #POLY at work here. Over riding the method display and adding all the functionality to it
-    def display(self):
+    def displayInfo(self):
         self.final = self.url + self.ticker
         self.request = urllib2.Request(self.final)
         self.opener = urllib2.build_opener()
